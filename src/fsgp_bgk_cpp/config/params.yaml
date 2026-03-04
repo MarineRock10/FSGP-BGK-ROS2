@@ -1,0 +1,22 @@
+# FSGP-BGK C++ Node Parameters
+fsgp_bgk_node:
+  ros__parameters:
+    # ROS topics
+    cloud_topic: '/simulated_lidar_local'
+    odom_topic: '/odom'
+    global_link: 'map'
+
+    # Map parameters
+    max_cloud_height: 0.5
+    downsampl_voxel_size: 0.3
+    binarization_condition: true
+    obstacle_threshold: 0.5
+    occupancy_threshold: 0.5
+    smooth_kernel_size: 3
+    map_update_rate: 0.025
+    publish_resolution: 0.1
+
+    # Grid parameters
+    resolution: 0.2
+    x_length: 5.0
+    y_length: 5.0
