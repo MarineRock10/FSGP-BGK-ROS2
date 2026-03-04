@@ -42,11 +42,10 @@ def generate_launch_description():
     )
 
     # Python traversability service
-    # Note: This runs the Python script directly. The script must be on the PATH
-    # or launched from the correct working directory.
+    # Installed by the fsgp_bgk ament_python package (console_scripts entry point).
     python_service = Node(
-        package='fsgp_bgk_cpp',  # Uses the same package for launch convenience
-        executable='traversability_service.py',
+        package='fsgp_bgk',
+        executable='traversability_service',
         name='traversability_service',
         output='screen',
         parameters=[{
