@@ -1,0 +1,24 @@
+# Request: robot pose + local point cloud
+# Pose: [x, y, z, roll, pitch, yaw]
+float64[6] pose
+
+# Flattened point cloud (Nx3, row-major: x0,y0,z0,x1,y1,z1,...)
+float32[] points
+uint32 num_points
+
+---
+
+# Response: traversability results on a regular grid
+# Grid coordinates (Nx2, row-major: gx0,gy0,gx1,gy1,...)
+float32[] grid_points
+uint32 num_grid_points
+
+# Predicted mean elevation for each grid cell
+float32[] mean_heights
+
+# Traversability score [0,1] for each grid cell (1 = fully traversable)
+float32[] traversability
+
+# Whether computation succeeded
+bool success
+string message
