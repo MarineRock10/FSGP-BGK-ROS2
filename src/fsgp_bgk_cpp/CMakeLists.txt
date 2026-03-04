@@ -88,11 +88,18 @@ ament_target_dependencies(fsgp_bgk_node
 )
 
 # Install targets
+# Shared libraries go to lib/ so the dynamic linker can find them.
+# The executable goes to lib/${PROJECT_NAME} (ROS 2 convention).
 install(TARGETS
-  fsgp_bgk_node
   point_cloud_preprocessor
   global_map_manager
-  DESTINATION lib/${PROJECT_NAME}
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+)
+
+install(TARGETS
+  fsgp_bgk_node
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
 
 install(DIRECTORY include/
