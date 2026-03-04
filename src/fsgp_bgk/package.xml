@@ -18,6 +18,10 @@
   <depend>fsgp_bgk_msgs</depend>
   <depend>std_msgs</depend>
 
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-sklearn</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+
   <export>
     <build_type>ament_python</build_type>
   </export>
